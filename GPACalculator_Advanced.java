@@ -1,5 +1,4 @@
-public class GPACalculator_Advanced {
-    public static void main(String[] args) {
+void main(String[] args) {
        
         // 1. กำหนดข้อมูลรายวิชา (Input)
         // ทดสอบใส่เกรดหลายๆ แบบ รวมถึงเกรด E
@@ -9,7 +8,7 @@ public class GPACalculator_Advanced {
         double totalPoints = 0.0;
         int totalCredits = 0;    
 
-        System.out.println("--- เริ่มการคำนวณเกรด (รองรับ + และ E) ---");
+       IO.println("--- เริ่มการคำนวณเกรด (รองรับ + และ E) ---");
 
         // 2. วนลูปคำนวณ
         for (int i = 0; i < grades.length; i++) {
@@ -29,12 +28,12 @@ public class GPACalculator_Advanced {
                 case "E":
                     // โจทย์กำหนด: E มีค่า 0 และ *ไม่นำมาคิดเกรดเฉลี่ย*
                     // ดังนั้นเราจะตั้ง flag ให้ข้ามการบวกหน่วยกิต
-                    System.out.println("วิชาที่ " + (i + 1) + " (เกรด E): ไม่นำมาคำนวณ");
+                   IO.println("วิชาที่ " + (i + 1) + " (เกรด E): ไม่นำมาคำนวณ");
                     isCalculated = false;
                     break;
                    
                 default:
-                    System.out.println("ไม่พบข้อมูลเกรด: " + grade);
+                   IO.println("ไม่พบข้อมูลเกรด: " + grade);
                     isCalculated = false;
             }
 
@@ -44,19 +43,18 @@ public class GPACalculator_Advanced {
                 totalPoints += currentPoints;
                 totalCredits += creditPerSubject;
                
-                System.out.println("วิชาที่ " + (i + 1) + " (เกรด " + grade + "): ได้แต้ม " + currentPoints);
+               IO.println("วิชาที่ " + (i + 1) + " (เกรด " + grade + "): ได้แต้ม " + currentPoints);
             }
         }
 
         // 3. แสดงผลลัพธ์
-        System.out.println("-------------------------");
+       IO.println("-------------------------");
         if (totalCredits > 0) {
             double gpa = totalPoints / totalCredits;
-            System.out.println("คะแนนรวมทั้งหมด: " + totalPoints);
-            System.out.println("หน่วยกิตรวมที่นำมาคิด: " + totalCredits); // สังเกตว่าหน่วยกิตจะลดลงถ้ามี E
-            System.out.printf("เกรดเฉลี่ย (GPA) ของคุณคือ: %.2f%n", gpa);
+           IO.println("คะแนนรวมทั้งหมด: " + totalPoints);
+           IO.println("หน่วยกิตรวมที่นำมาคิด: " + totalCredits); // สังเกตว่าหน่วยกิตจะลดลงถ้ามี E
+           IO.printf("เกรดเฉลี่ย (GPA) ของคุณคือ: %.2f%n", gpa);
         } else {
-            System.out.println("ไม่มีหน่วยกิตที่นำมาคำนวณได้");
+           IO.println("ไม่มีหน่วยกิตที่นำมาคำนวณได้");
         }
     }
-}

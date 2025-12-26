@@ -1,4 +1,4 @@
-void main(String[] args) {
+void main(String []args) {
        
         // 1. กำหนดข้อมูลรายวิชา (Input)
         // ทดสอบใส่เกรดหลายๆ แบบ รวมถึงเกรด E
@@ -53,7 +53,7 @@ void main(String[] args) {
             double gpa = totalPoints / totalCredits;
            IO.println("คะแนนรวมทั้งหมด: " + totalPoints);
            IO.println("หน่วยกิตรวมที่นำมาคิด: " + totalCredits); // สังเกตว่าหน่วยกิตจะลดลงถ้ามี E
-           IO.printf("เกรดเฉลี่ย (GPA) ของคุณคือ: %.2f%n", gpa);
+           System.out.printf("เกรดเฉลี่ย (GPA) ของคุณคือ: %.2f%n", gpa);
         } else {
            IO.println("ไม่มีหน่วยกิตที่นำมาคำนวณได้");
         }
